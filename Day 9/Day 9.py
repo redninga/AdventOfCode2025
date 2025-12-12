@@ -5,10 +5,11 @@ code = content.split('\n')
 
 import numpy as np
 import copy
+import time
 
 #%% part 1
 # spaties verwijderen
-
+s = time.time()
 points = [list(map(int, x.split(","))) for x in code]
 
 distance = np.zeros((len(points),len(points)),dtype = np.int64)
@@ -96,6 +97,8 @@ maximum = np.argwhere(distance == np.max(distance))[0]
 print(maximum)
 print(distance[maximum[0],maximum[1]])
 
+e = time.time()
+print(e-s)
 
 #%%
 
